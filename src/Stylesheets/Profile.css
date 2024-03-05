@@ -1,0 +1,46 @@
+.profile-icon{
+    color: white;
+    height: 40px;     
+}
+.ProfileContainer{
+    position: relative;
+    padding:0;
+    height:100%;
+    margin:0;
+    display:flex;
+    align-items: center;
+}
+.Dropdown{
+    background-color: aquamarine;
+    display:none
+}
+
+.ProfileContainer .visible{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top:100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top-left-radius: 15%;
+    border-top-right-radius: 15%;
+
+}
+
+.Dropdown {
+    background-image: linear-gradient(to bottom, black, rgb(85, 83, 83));
+    color: white;   
+}
+
+.Dropdown li{
+    padding: 0.5rem;
+    font-size:15px;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.Dropdown li:hover{
+  background-color: rgba(240, 248, 255, 0.164);
+}
+

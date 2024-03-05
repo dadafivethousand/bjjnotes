@@ -1,0 +1,253 @@
+/* Post.css */
+
+/* Container for each post */
+.Entry {
+    border: 2px solid #131111;
+    position: relative;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+    white-space: pre-wrap; 
+    position: relative;
+    padding-top:0;
+    margin: 1rem;
+    background-color: white;
+  }
+
+  .Header{
+    margin: 1rem 0;
+    font-weight: bold;
+    font-family: "Kode Mono", monospace;
+   
+  }
+  
+  /* Date and title section */
+  .Date {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 50px;  
+    border-top:black 2px solid;
+  }
+  
+  .title{
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: black 2px solid;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;;
+    text-align: center;
+  }
+
+  .Date, .title{
+    background-color: rgba(0, 0, 0, 0.45);
+    border-left: black 2px solid;
+    border-right: black 2px solid;
+    
+  }
+  /* Rest of the post content */
+  .Rest {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Delete and edit buttons */
+
+  .middlerow {
+    margin: 4rem 0;
+  }
+ button {
+    margin-right: 10px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: rgb(123, 117, 117);
+    
+  }
+  
+ button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Edit form */
+  .EditForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%
+  }
+  
+  .EditForm input,
+  .EditForm textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+  
+  }
+  
+  .EditForm button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .EditForm button[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+  }
+ .EditFormLabel{
+  text-align: left;
+  width:100%;
+  margin: 3px;
+  font-weight: bold;
+ }
+  
+  
+ 
+  .DeleteOrEdit1 {
+    display: flex;
+    justify-content: center; /* Adjust as needed */
+    align-items: center; /* This ensures vertical alignment if needed */
+    top:0;
+    right:0;
+    
+
+  }
+  
+ input[type='date']{
+  width: 10rem;
+  height:5px;   
+  margin:3px;
+ }
+  
+.DeleteOrEdit1 > * {
+    margin: 5px;
+    cursor: pointer;
+    font-size: 24px;
+  }
+
+  .SubmitOrCancel { margin: 5px;
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+ 
+  .Invisible{
+    opacity: 0;
+  }
+
+  input{
+    text-align: center;
+ 
+
+  }
+
+   .tall{
+    height:200px
+   }
+
+   .PostContainer{
+    display: flex;
+ max-height: fit content
+   }
+
+   .PlusMinusButton{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-right: 20px;
+  
+   }
+   .PlusMinusButton button{
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+   
+   }
+
+   .Content {
+    flex-grow: 1; /* This will make the div expand to fill available space */
+    /* Other styles as needed */
+  }
+
+  .Invisible{
+    display: none
+  }
+
+  .icon-button {
+    font-size:15px;
+  }
+
+.form-actions > * {
+  font-size:10px;
+}
+
+.DisclaimerContainer{
+  height:30vh;
+  width:50vw;  
+  position: fixed;
+  top: 50%;
+  left:50%; 
+  transform: translate(-50%, -50%);
+  border: 3px solid black;
+  border-radius: 2%;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.536);
+  background-image: radial-gradient( rgb(223, 206, 209), black);
+  z-index: 70;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Bold{
+  font-weight: bold;
+}
+
+.DisclaimerContainer button{
+  background-color: black;
+  color:white;  
+}
+
+.DisclaimerContainer button:hover{
+  background-color: rgba(0, 0, 0, 0.405);
+   
+}
+
+.HideBorder{
+  border: none
+}
+
+.HideTopBorder{
+  border-top: none;
+}
+
+.InstructionalDate {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  height: 50px;  
+  border:black 2px solid;
+  background-color: rgba(0, 0, 0, 0.45); 
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+ 
+
+}
+
+.Italic{
+  font-style: italic;
+}

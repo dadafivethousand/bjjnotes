@@ -1,0 +1,213 @@
+.bjj-training-form {
+    position: absolute; /* Allows the form to be part of the document flow */
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(67, 60, 60, 0.1);
+   
+    border:  2px solid black;
+    z-index: 1000;
+}
+
+.bjj-training-form .form-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.bjj-training-form input{
+    width: 100%;
+    height: 50px;
+}
+ 
+
+.bjj-training-form textarea {
+    width: 100%; /* Adjusted for consistency */
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding doesn't add to the width */
+    height: 20vh;
+    resize: vertical; 
+    
+}
+ 
+
+ 
+
+.bjj-training-form .date-input {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px;
+    margin-bottom: 15px; /* Added for consistency */
+}
+
+ 
+
+.bjj-training-form h2,
+.bjj-training-form h3 {
+    color: #333; /* Making h3 color consistent with h2 for a cleaner look */
+    text-align: center; /* Center aligns titles for a cohesive look */
+}
+
+.bjj-training-form h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.bjj-training-form h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+ 
+
+.bjj-training-form button {
+    display: block; /* Makes the button a block element */
+    width: fit-content; /* Adjusts width to fit its content */
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 0 auto; /* Centers the button */
+}
+
+.bjj-training-form button:hover {
+    background-color: #92979c;
+}
+
+.bjj-training-form .close-button {
+    position: absolute;
+    top: 10px; /* Adjust as necessary */
+    right: 10px; /* Adjust as necessary */
+    padding: 5px 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px; /* Adjust size as necessary */
+    color: #333; /* Or any color that fits your design */
+}
+
+.bjj-training-form .close-button:hover {
+    color: #000; /* Slightly darker on hover for feedback */
+}
+
+.DateAndTitle {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%; /* Ensure the parent covers full width */
+    margin-top: 2rem;
+    
+}
+.bjj-training-form input::placeholder, textarea::placeholder {
+    color: #888; /* Light grey color */
+    font-size: 15px; /* Larger font size */
+     text-align: center;
+    font-weight: bold; /* Bold font weight */
+    text-transform: uppercase; /* Uppercase text */
+  }
+
+ 
+
+.section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+ width:100%
+ 
+}
+
+.entry {
+    height: 60%
+}
+
+ .DateAndTitle input[type="date"] {
+    font-size: 10px; /* Adjust the font size as needed */
+    height: 100%;
+    
+  }
+
+  
+ .DateAndTitle input[type="text"] {
+    font-size: 10px; /* Adjust the font size as needed */
+    height: 25px;
+    border: 1px solid black;
+    background-color:#00000000;
+    border-radius:0;
+    box-shadow: none;
+    margin:0;
+    padding:0;
+  }
+ 
+
+.section1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1; /* Makes the title section take up the remaining space */
+    max-width: 75vw;
+}
+
+.title {
+    width: 100%; /* Ensures the title input takes up all available space in its container */
+}
+label {
+    margin: 0.5rem auto;
+}
+
+ 
+.date {
+    /* Keep your fixed width for the date input container */
+    max-width: 10vw; /* Example fixed width */
+    flex-shrink: 0; /* Prevents the date section from shrinking */
+    margin-right: 1rem; /* Adjust the spacing between date and title */
+}
+
+.AddEntryOrSubmit{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.AddEntryOrSubmit button{
+margin:5px
+}
+
+.FilmForm {
+    margin-top: 20px;
+}
+
+.FilmForm input[type='text']{
+    margin:5px
+}
+
+.InstructionalForm{
+    margin-top: 20px;
+}
+
+.InstructionalForm textarea{
+    margin-top: 15px;
+}
+
+@media (max-width:600px) {
+    .DateAndTitle {
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+    }        
+    }

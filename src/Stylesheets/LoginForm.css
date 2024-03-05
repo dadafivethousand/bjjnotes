@@ -1,0 +1,132 @@
+.modal-background {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: for dimmed background */
+    z-index: 10; /* Ensure it's above other content */
+    opacity: 0;
+    transition: opacity 1.5s ease-in;
+}
+
+.form-container {
+    border: 2px solid rgb(255, 255, 255);
+    width: 50%; /* or any other size */
+    padding: 10px;
+    background-color:rgba(255, 255, 255, 0.09);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    
+   
+}
+
+ 
+
+.form-container input {
+    text-align: left;
+ width:100%;
+ margin-bottom: 2px
+    
+}
+
+.form-container input::placeholder {
+    color: #888; /* Light grey color */
+    font-size:medium ;
+     text-align:center;
+    font-weight:normal; /* Bold font weight */
+    text-transform:none
+  }
+
+  .username, .pw, form {
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .form-container button {
+    margin: 5px;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    color: white;
+  }
+
+
+.username, .pw {
+    width: 100%
+}
+
+.forgotPassword {
+    font-size: medium;
+    color: rgb(255, 255, 255);
+}
+
+.red {
+    color: crimson;
+    text-decoration: underline;
+}
+
+.red:hover {
+    cursor: pointer;
+
+}
+
+.modal-background.appear {
+    opacity: 1
+}
+
+.form-container button:hover{
+    background-color: rgba(255, 255, 255, 0.252);
+
+}
+.hide{
+    display: none;
+}
+
+.SuccessMessage {
+    color: crimson;
+    font-size: large;
+
+}
+
+.PasswordChangeContainer{
+    height:50vh;
+    width:50vw;  
+    position: fixed;
+    top: 50%;
+    left:50%; 
+    transform: translate(-50%, -50%);
+    border: 3px solid black;
+    border-radius: 2%;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.536);
+ 
+}
+
+.PasswordChangeContainer form{
+width:100%;
+height:100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+background-color: rgba(0, 0, 0, 0.458);
+}
+
+.PasswordChangeContainer input{
+   margin: 5px;
+    }
+    
+    .LandingPageContainer .error-message p {
+    font-size: 15px;
+}
+
+@media(max-width: 800px) {
+
+.form-container {
+ 
+    width: 100%; /* or any other size */
+ 
+}
+}
