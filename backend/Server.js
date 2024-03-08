@@ -10,7 +10,16 @@ app.use(cors());
 
 
 app.use(express.json());
-  
+
+// New - Serve static files from the React app
+app.use(express.static(path.join(__dirname, '/var/www/bjjnotes/build')));
+
+// New - The "catchall" handler
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/var/www/bjjnotes/build', 'index.html'));
+});
+
+
 mongoose.connect('mongodb://localhost:27017/jiuJitsuAppDB')
   .then(() => console.log('Connected to MongoDB jiuJitsuAppDB'))
   .catch(err => console.error('Could not connect to MongoDB:', err));

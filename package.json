@@ -1,5 +1,4 @@
 {
-    "proxy": "${process.env.REACT_APP_API_URL}",
     "name": "bjjnotes",
     "version": "0.1.0",
     "private": true,
