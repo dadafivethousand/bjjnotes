@@ -35,7 +35,7 @@ const handleEditChange = (event) => {
   const handleEditSubmit = async (event) => { 
     event.preventDefault();
     try {
-      const response = await fetch(`http://localhost:3000/api/film/edit/${editFilmId}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/film/edit/${editFilmId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ const handleEditChange = (event) => {
     setDisclaimer(false)
     setSelectedIdForDeletion(null)
     try {
-      const response = await fetch(`http://localhost:3000/api/film/delete/${id}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/film/delete/${id}`, {
         method: 'DELETE',
       });
       if (response.ok) {

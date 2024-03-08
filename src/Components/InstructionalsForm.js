@@ -44,7 +44,7 @@ export default function InstructionalsForm({setShowForm}) {
     try {
       console.log('Attempting to add new entry');
       console.log(updatedFormData)
-      const response = await fetch('http://localhost:3000/api/instructional/add', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/instructional/add`, {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',

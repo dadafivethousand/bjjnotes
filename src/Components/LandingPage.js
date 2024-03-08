@@ -28,7 +28,7 @@ export default function LandingPage() {
     useEffect(() => {
       // Trigger the animation as soon as the component mounts
       setIsVisible(true);
-      if (token) {
+      if (token  & !loggedIn) {
         // Logic to handle password reset view
         setFormType('passwordUpdate'); // Example state update
         setShowForm(true) 

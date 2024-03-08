@@ -46,7 +46,7 @@ export default function PasswordReset({email, setShowForm, handleEmailChange, se
         event.preventDefault();
         try {
             console.log('bitch bitch bitch')
-            const response = await fetch('http://localhost:3000/api/users/reset', {
+            const response = await fetch('${process.env.REACT_APP_API_URL}/api/users/reset', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

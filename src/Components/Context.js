@@ -35,7 +35,7 @@ export const LoggedInProvider = ({ children }) => {
  
     const fetchData = async () => {
         try {
-          const response = await fetch(`http://localhost:3000/api/posts/${userId}`); // Replace with your API endpoint
+          const response = await fetch(`${process.env.REACT_APP_API_URL}/api/posts/${userId}`); // Replace with your API endpoint
           if (!response.ok) {
             throw new Error('Data fetching failed');
           }
@@ -49,7 +49,7 @@ export const LoggedInProvider = ({ children }) => {
 
     const fetchFilmData = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/film/${userId}`); // Replace with your API endpoint
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/film/${userId}`); // Replace with your API endpoint
         if (!response.ok) {
           throw new Error('Data fetching failed');
         }
@@ -62,7 +62,7 @@ export const LoggedInProvider = ({ children }) => {
     };
     const fetchInstructionalData = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/instructional/${userId}`); // Replace with your API endpoint
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/instructional/${userId}`); // Replace with your API endpoint
         if (!response.ok) {
           throw new Error('Data fetching failed');
         }

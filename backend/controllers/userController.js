@@ -88,7 +88,7 @@ exports.login = async (req, res) => {
 
 
 exports.sendResetEmail = async (req,res) => {
-    console.log('reset')
+ 
     const {email} = req.body;
     const user = await User.findOne({ email:email });
     if (!user) {
@@ -108,6 +108,25 @@ exports.sendResetEmail = async (req,res) => {
         return res.status(500).json({ message: 'Failed to send password reset email.', error: error.message });
       }
   
+}
+
+exports.updatePassword = async (req,res) => {
+  const {token, password} = req.body
+  const user = await User.findOne({
+    resetPasswordToken: token,
+    resetPasswordExpires: { $gt: Date.now() }
+  });
+
+  if (!user) {
+    return res.status(400).send('Password reset token is invalid or has expired.');
+  }
+  const hashedPassword = await bcrypt.hash(password, saltRounds);
+  user.password = hashedPassword; // Implement hashPassword to handle password hashing
+  user.resetPasswordToken = undefined;
+  user.resetPasswordExpires = undefined;
+  await user.save();
+
+  res.json({message:'Password has been updated.'});
 }
 
 exports.changePassword = async (req, res) => {
@@ -130,25 +149,3 @@ exports.changePassword = async (req, res) => {
   }
 };
 
-exports.updatePassword = async (req,res) => {
-  const {token, password} = req.body
-  const user = await User.findOne({
-    resetPasswordToken: token,
-    resetPasswordExpires: { $gt: Date.now() }
-  });
-
-  if (!user) {
-    return res.status(400).send('Password reset token is invalid or has expired.');
-  }
-  const hashedPassword = await bcrypt.hash(password, saltRounds);
-  user.password = hashedPassword; // Implement hashPassword to handle password hashing
-  user.resetPasswordToken = undefined;
-  user.resetPasswordExpires = undefined;
-  await user.save();
-
-  res.json({message:'Password has been updated.'});
-
-  const nodemailer = require('nodemailer');
-
-
-}

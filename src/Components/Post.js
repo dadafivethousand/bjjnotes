@@ -45,7 +45,7 @@ const handleToggle = () => {
     const deletePost = async(id)=> {
 
         try {
-            const response = await fetch(`http://localhost:3000/api/posts/delete/${id}`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/posts/delete/${id}`, {
                 method: 'DELETE',
             });
             if (response.ok) {

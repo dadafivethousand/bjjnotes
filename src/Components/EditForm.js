@@ -28,7 +28,7 @@ export default function EditForm({editPostId, setEditPostId} ) {
         event.preventDefault();
          
         try {
-          const response = await fetch(`http://localhost:3000/api/posts/edit/${editPostId}`, {
+          const response = await fetch(`${process.env.REACT_APP_API_URL}/api/posts/edit/${editPostId}`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',

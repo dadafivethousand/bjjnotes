@@ -50,7 +50,7 @@ const handleEditChange = (event, index = null) => {
     event.preventDefault();
     console.log('EditInstructionalFormData', EditInstructionalFormData)
     try {
-      const response = await fetch(`http://localhost:3000/api/instructional/edit/${editInstructionalId}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/instructional/edit/${editInstructionalId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -90,7 +90,7 @@ const handleEditChange = (event, index = null) => {
 
   const deleteInstructional = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/instructional/delete/${id}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/instructional/delete/${id}`, {
         method: 'DELETE',
       });
       if (response.ok) {

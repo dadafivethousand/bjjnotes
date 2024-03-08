@@ -21,7 +21,7 @@ export default function FilmForm({setShowForm}) {
     try {
       console.log('Attempting to add new entry');
       console.log(formData)
-      const response = await fetch('http://localhost:3000/api/film/add', {
+      const response = await fetch('${process.env.REACT_APP_API_URL}/api/film/add', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ export default function FilmForm({setShowForm}) {
             name="url"
             value={formData.url}
             onChange={handleChange}
-            required
+        m
           />
      
         <div className="section">
