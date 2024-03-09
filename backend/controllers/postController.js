@@ -1,5 +1,5 @@
 const Post = require('../models/Post'); // Replace with the actual path to your Post model
-
+const User = require('../models/User');
 exports.deleteData = async (req, res) => { 
         const { id } = req.params;
         try {
@@ -15,7 +15,7 @@ exports.getData = async (req, res) => {
     const { userId } = req.params;
     try {
         const populatedPosts = await Post.find({ user: userId }).populate('user').sort({trainingDate: -1});
-
+    
        const formattedPosts = populatedPosts.map(post => ({
             ...post._doc,
             trainingDate: post.trainingDate.toISOString().split('T')[0],

@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -5,24 +6,32 @@ const userRoutes = require('./routes/UserRoutes');
 const instructionalRoutes = require('./routes/InstructionalRoutes')
 const filmRoutes = require('./routes/FilmRoutes')
 const postRoutes = require('./routes/PostRoutes')
+const path = require('path'); // Add this line to import the path module
+const User = require('./models/User')
+
 const cors = require('cors');
 app.use(cors());
 
 
 app.use(express.json());
 
-// New - Serve static files from the React app
-app.use(express.static(path.join(__dirname, '/var/www/bjjnotes/build')));
+if (process.env.NODE_ENV === "production") {
+  // Serve any static files
+  app.use(express.static(path.join(__dirname, 'build')));
+  
+  // Handle React routing, return all requests to React app
+  app.get('*', function(req, res) {
+      res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  });
+}
 
-// New - The "catchall" handler
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/var/www/bjjnotes/build', 'index.html'));
-});
 
 
-mongoose.connect('mongodb://localhost:27017/jiuJitsuAppDB')
-  .then(() => console.log('Connected to MongoDB jiuJitsuAppDB'))
+
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Could not connect to MongoDB:', err));
+
 
 app.use('/api/users', userRoutes);
 app.use('/api/film', filmRoutes)
@@ -38,6 +47,16 @@ app.get('/secret-wipe-database', async (req, res) => {
     res.status(500).send('Failed to wipe database');
   }
 });
+
+(async () => {
+  try {
+    const allUsers = await User.find({});
+    console.log(allUsers);
+  } catch (error) {
+    console.error('Failed to fetch users:', error);
+  }
+})();
+ 
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

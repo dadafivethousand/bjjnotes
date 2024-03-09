@@ -37,6 +37,8 @@ export default function Form({setShowForm}) {
         try {
             console.log('Attempting to add new entry');
             console.log(formData)
+            const apiUrl = `${process.env.REACT_APP_API_URL}/api/posts/add`
+            console.log("Full API URL:", apiUrl);
             const response = await fetch(`${process.env.REACT_APP_API_URL}/api/posts/add`, {
                 method: 'POST',
                 headers: {
